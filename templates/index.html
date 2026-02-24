@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truedge - Thoughtful Minimalism</title>
+    <style>
+        .hero-section {
+            background-color: #f8f9fa;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            background-color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-desc {
+            color: #64748b;
+        }
+
+        /* Product Grid (Reuse from Dashboard style effectively) */
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .product-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        .product-price {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .author {
+            font-weight: 700;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Elevate Your Everyday.</h1>
+            <p class="hero-desc">Smartora believes that true style isn't about having more, it’s about having better.
+                Discover our collection of intentional, sustainable essentials.</p>
+            <a href="{% url 'collections' %}" class="btn-cta">Shop Collections</a>
+        </div>
+    </section>
+
+    <!-- Value Props -->
+    <section class="container">
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-truck feature-icon"></i>
+                <h3 class="feature-title">Free Shipping</h3>
+                <p class="feature-desc">On every order, no minimums.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-undo feature-icon"></i>
+                <h3 class="feature-title">Easy Returns</h3>
+                <p class="feature-desc">30-day hassle-free return policy.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-leaf feature-icon"></i>
+                <h3 class="feature-title">Sustainable</h3>
+                <p class="feature-desc">Ethically sourced materials.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-headset feature-icon"></i>
+                <h3 class="feature-title">24/7 Support</h3>
+                <p class="feature-desc">We're here whenever you need us.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products -->
+    <section class="container" style="background-color: #fafafa; border-radius: 20px;">
+        <h2 class="section-title">Popular Favorites</h2>
+        <p class="section-subtitle">Our most loved pieces, curated for you.</p>
+
+        <div class="features-grid"> <!-- Reusing grid layout -->
+            <div class="product-card">
+                <img src="https://i.postimg.cc/8zMsXY8N/Gemini-Generated-Image-foie1wfoie1wfoie.png" class="product-img"
+                    alt="Product">
+                <div class="product-info">
+                    <div class="product-title">Classic Cotton Shirt</div>
+                    <div class="product-price">Rs. 1300</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.postimg.cc/wjs1Wt77/Screenshot-2026-02-04-114056.png" class="product-img"
+                    alt="Product">
+                <div class="product-info">
+                    <div class="product-title">Slim Fit Checkered</div>
+                    <div class="product-price">Rs. 1299</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.postimg.cc/NG4mTrH8/Screenshot-2026-02-04-114148.png" class="product-img"
+                    alt="Product">
+                <div class="product-info">
+                    <div class="product-title">Silk Embroidered Kurta</div>
+                    <div class="product-price">Rs. 1199</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="{% url 'collections' %}" style="text-decoration: underline; color: black; font-weight: 600;">View
+                All Products &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container">
+        <h2 class="section-title">Reviews</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="quote">"Smartora has transformed my wardrobe! The quality and timeless designs make dressing
+                    effortless."</p>
+                <p class="author">- Alex P.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"I love Smartora's commitment to sustainability. Their pieces are not only stylish but
+                    also eco-friendly."</p>
+                <p class="author">- Jamie L.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"The customer service at Truedge is outstanding. They made my shopping experience
+                    seamless."</p>
+                <p class="author">- Morgan S.</p>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

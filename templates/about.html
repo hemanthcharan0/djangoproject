@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Smartora</title>
+    <style>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-block {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .section-text {
+            color: #525252;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Card Style for details */
+        .info-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .info-card h2 {
+            font-size: 1.75rem;
+            margin: 0 0 20px 0;
+            border-bottom: 2px solid var(--light-grey);
+            padding-bottom: 15px;
+        }
+
+        .info-card h3 {
+            font-size: 1.25rem;
+            margin: 25px 0 10px 0;
+            color: var(--accent-color);
+        }
+
+        .info-card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .signature {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 20px;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <!-- Hero Text -->
+        <div class="section-block">
+            <h1 class="section-title">Our Story</h1>
+            <p class="section-text">
+                Welcome to Smartora. We are more than just a brand; we are a philosophy of thoughtful living.
+                Our journey began with a simple idea: to provide products that not only meet expectations but redefine
+                them through quality and design.
+            </p>
+        </div>
+
+        <!-- Content Cards -->
+        <div class="info-card">
+            <h2>Who We Are</h2>
+            <p>
+                At Smartora, we believe in innovation, integrity, and customer satisfaction. Over the years, we have
+                grown into a trusted destination for those who seek value in every purchase.
+                <br><br>
+                From cutting-edge technology to everyday essentials, our diverse range of products is carefully curated
+                to cater to your needs, ensuring that "less but better" isn't just a slogan, but a reality.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h2>Our Mission & Vision</h2>
+
+            <h3>Mission</h3>
+            <p>To provide top-notch products and services that enhance the lives of our customers while fostering a
+                culture of innovation and integrity.</p>
+
+            <h3>Vision</h3>
+            <p>To be a global leader in our industry, recognized for our commitment to quality, customer satisfaction,
+                and social responsibility.</p>
+        </div>
+
+        <div class="info-card" style="background-color: #f8f9fa;">
+            <h2>Meet the Founder</h2>
+            <p>
+                Our founder, <strong>Hemanth</strong>, is a visionary leader with a passion for excellence. With years of
+                experience and a commitment to customer satisfaction, Hemanth has been instrumental in shaping Smartora
+                into the reputable brand it is today.
+            </p>
+            <div class="signature">- Hemanth, Founder</div>
+        </div>
+
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

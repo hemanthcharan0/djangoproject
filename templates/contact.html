@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Smartora</title>
+    <style>
+        .page-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .header-section p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            height: fit-content;
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+        }
+
+        .info-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-item p {
+            color: #64748b;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Form */
+        .form-box {
+            background: white;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: inherit;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .btn-submit {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="page-wrapper">
+        <div class="header-section">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you. Here's how you can reach us.</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Contact Info -->
+            <div class="info-box">
+                <div class="info-item">
+                    <h3><i class="fas fa-phone-alt"></i> Phone</h3>
+                    <p>+91 7981732864</p>
+                </div>
+                <div class="info-item">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>placementcourse112@gmail.com</p>
+                </div>
+                <div class="info-item">
+                    <h3><i class="fas fa-map-marker-alt"></i> Office</h3>
+                    <p>1234 Innovation Drive,<br>Tech City, TC 56789</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="form-box">
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" id="email" name="email" class="form-control" placeholder="Your Email"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" rows="5" class="form-control"
+                            placeholder="How can we help?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>
